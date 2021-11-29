@@ -7,7 +7,20 @@ function changeState(state, action){
   }
 }
 
+const dispatch = (action) => {
+  state = changeState(state, action)
+  return state
+}
+
 let state = {count: 0}
 let action = {type: 'INCREASE_COUNT'}
 
-changeState(state, action)
+dispatch(action);
+dispatch(action);
+dispatch(action);
+
+const render = () => {
+  return document.body.textContent = state.count;
+}
+
+render();
